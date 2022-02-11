@@ -1,5 +1,5 @@
 # data-science-projects
-This repository contains my projects in data science
+MY PROJECTS:
 
 [Artificial Neural Network from scratch](anns-from-scratch/simple_ann_from_scratch.py) \
 [Cat Meow Classification](cat-meow-classification/Code_Cat-Meow_Classification.ipynb) \
