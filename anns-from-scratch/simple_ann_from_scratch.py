@@ -1,21 +1,15 @@
 import numpy as np
 
 class ANN:   
-    def __init__(self, num_input_neurons=3, hidden_layers=[5, 3], num_output_neurons=1):
+    def __init__(self, layers=[3, 5, 3, 1]):
         """
         Constructor for Simple Artificial Neural Network.
 
         Arguments:
-        num_input_neurons [int]: Number of input neurons
-        hidden_layers (list): List of number of neurons in each hidden layer
-        num_output_neurons [int]: Number of output neurons 
+        layers (list): list of number of neurons in each layer
         """
         # initializing layers
-        self.num_input_neurons=num_input_neurons
-        self.hidden_layers=hidden_layers
-        self.num_output_neurons=num_output_neurons
-
-        layers=[num_input_neurons] + hidden_layers + [num_output_neurons]
+        self.layers=layers
 
         # initializing weights
         weights=[]
@@ -29,7 +23,7 @@ class ANN:
         # initializing activations values with zeros
         activations = []
 
-        for i in range(len(layers)):
+        for i in range(len(self.layers)):
             a = np.zeros(layers[i])
             activations.append(a)
 
@@ -38,8 +32,8 @@ class ANN:
         # initializing derivatives with zeros
         derivatives = []
 
-        for i in range(len(layers)-1):
-            d = np.zeros((layers[i], layers[i+1]))
+        for i in range(len(self.layers)-1):
+            d = np.zeros((self.layers[i], self.layers[i+1]))
             derivatives.append(d)
 
         self.derivatives=derivatives
@@ -174,3 +168,13 @@ class ANN:
             
             # print mse on each epoch
             print("MSE: {} on epoch {}".format(sum_mse/len(X), i))
+
+    
+    def evaluate(self, X_test, y_test):
+        outputs=self.predict(X_test)
+
+        sum_mse=0
+        for target, output in zip(y_test, outputs):
+            sum_mse+=self._mse(target, output)
+        
+        return sum_mse
