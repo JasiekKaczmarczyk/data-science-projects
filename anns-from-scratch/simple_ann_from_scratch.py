@@ -177,4 +177,4 @@ class ANN:
         for target, output in zip(y_test, outputs):
             sum_mse+=self._mse(target, output)
         
-        return sum_mse
+        return sum_mse/len(X_test)
