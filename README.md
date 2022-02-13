@@ -6,4 +6,5 @@ MY PROJECTS:
 [Energy Consumption of Electric Vehicle Charging Stations](electric_vehicle_charging_station_energy_consumption/Code_Electric-Vehicle-Charging-Station-Energy-Consumption.ipynb) \
 [IMDB Films By Actors](imdb-films-by-actor-for-10k-actors/Code_Imdb-Films-By-Actor.ipynb) \
 [Kaggle Survey 2021](kaggle-survey-2021/Code_Kaggle-Survey-2021.ipynb) \
-[Simple Genetic Algorithm](genetic-algorithm/simple_ga.py)
+[Simple Genetic Algorithm](genetic-algorithm/simple_genetic_algorithms.py)
+[Simple Evolution Strategies](genetic-algorithm/simple_evolution_strategies.py)
