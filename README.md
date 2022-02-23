@@ -7,7 +7,7 @@
 - Evolutionary Algorithms:
     - [Genetic Algorithm Test](genetic-algorithm/ga_test.ipynb)
     - [Genetic Algorithm Implementation](genetic-algorithm/simple_genetic_algorithms.py)
-    - [Evolution Stratiegies Test](genetic-algorithm/es_test.ipynp)
+    - [Evolution Stratiegies Test](genetic-algorithm/es_test.ipynb)
     - [Evolution Strategies Implementation](genetic-algorithm/simple_evolution_strategies.py)
 - Machine Learning Algorithms:
     - [Test](ml-algorithms-from-scratch/ml_algorithms_test.ipynb)
