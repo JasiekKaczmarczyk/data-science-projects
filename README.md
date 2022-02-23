@@ -5,7 +5,7 @@ ALGORITHMS FROM SCRATCH:
 [Simple Genetic Algorithm From Scratch](genetic-algorithm/simple_genetic_algorithms.py) \
 [Simple Evolution Strategies From Scratch](genetic-algorithm/simple_evolution_strategies.py) \
 [K-Nearest Neighbours From Scratch](ml-algorithms-from-scratch/knn.py) \
-[K-Nearest Neighbours From Scratch](ml-algorithms-from-scratch/linear_regression.py)
+[Linear Regression From Scratch](ml-algorithms-from-scratch/linear_regression.py)
 
 DATA SCIENCE PROJECTS:
 
