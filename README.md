@@ -14,6 +14,7 @@
     - [K-Nearest Neighbours From Scratch](ml-algorithms-from-scratch/knn.py)
     - [Linear Regression From Scratch](ml-algorithms-from-scratch/linear_regression.py)
     - [Logistic Regression From Scratch](ml-algorithms-from-scratch/logistic_regression.py)
+    - [Naive Bayes From Scratch](ml-algorithms-from-scratch/naive_bayes.py)
 
 ## DATA SCIENCE PROJECTS:
 
