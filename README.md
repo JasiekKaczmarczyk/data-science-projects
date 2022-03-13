@@ -11,10 +11,11 @@
     - [Evolution Strategies Implementation](genetic-algorithm/simple_evolution_strategies.py)
 - Machine Learning Algorithms:
     - [Test](ml-algorithms-from-scratch/ml_algorithms_test.ipynb)
-    - [K-Nearest Neighbours From Scratch](ml-algorithms-from-scratch/knn.py)
-    - [Linear Regression From Scratch](ml-algorithms-from-scratch/linear_regression.py)
-    - [Logistic Regression From Scratch](ml-algorithms-from-scratch/logistic_regression.py)
-    - [Naive Bayes From Scratch](ml-algorithms-from-scratch/naive_bayes.py)
+    - [K-Nearest Neighbours](ml-algorithms-from-scratch/knn.py)
+    - [Naive Bayes](ml-algorithms-from-scratch/naive_bayes.py)
+    - [Linear Regression](ml-algorithms-from-scratch/linear_regression.py)
+    - [Logistic Regression](ml-algorithms-from-scratch/logistic_regression.py)
+    
 
 ## DATA SCIENCE PROJECTS:
 
