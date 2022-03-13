@@ -40,6 +40,8 @@ class ParticleSwarm:
         return pop+v
 
     def optimize(self, function_to_optimize, n_iterations=300, n_pops=16, n_dims=2):
+        # initialize history
+        self.history=np.zeros(shape=(n_iterations, n_dims))
 
         population=self._generate_population(n_pops, n_dims)
 
@@ -51,6 +53,10 @@ class ParticleSwarm:
 
             best_idx = np.argsort(scores)[0]
             best_pop, best_eval = population[best_idx], function_to_optimize(population[best_idx])
+
+            # update history
+            self.history[i] = best_pop
+
             print("Generation {}: best pop={}, value={}".format(i, best_pop, best_eval))
 
             # generate new coordinates
@@ -64,3 +70,6 @@ class ParticleSwarm:
             population[mask]=new_population[mask]
             
         return best_pop, best_eval
+
+    def get_history(self):
+        return self.history
