@@ -4,17 +4,20 @@
 - Artificial Neural Networks: 
     - [Test](anns-from-scratch/ann_test.ipynb)
     - [Implementation](anns-from-scratch/simple_ann_from_scratch.py)
+- Machine Learning Algorithms:
+    - [ML Algorithms Test](ml-algorithms-from-scratch/ml_algorithms_test.ipynb)
+    - [K-Nearest Neighbours](ml-algorithms-from-scratch/knn.py)
+    - [Naive Bayes](ml-algorithms-from-scratch/naive_bayes.py)
+    - [Linear Regression](ml-algorithms-from-scratch/linear_regression.py)
+    - [Logistic Regression](ml-algorithms-from-scratch/logistic_regression.py)
 - Evolutionary Algorithms:
     - [Genetic Algorithm Test](genetic-algorithm/ga_test.ipynb)
     - [Genetic Algorithm Implementation](genetic-algorithm/simple_genetic_algorithms.py)
     - [Evolution Stratiegies Test](genetic-algorithm/es_test.ipynb)
     - [Evolution Strategies Implementation](genetic-algorithm/simple_evolution_strategies.py)
-- Machine Learning Algorithms:
-    - [Test](ml-algorithms-from-scratch/ml_algorithms_test.ipynb)
-    - [K-Nearest Neighbours](ml-algorithms-from-scratch/knn.py)
-    - [Naive Bayes](ml-algorithms-from-scratch/naive_bayes.py)
-    - [Linear Regression](ml-algorithms-from-scratch/linear_regression.py)
-    - [Logistic Regression](ml-algorithms-from-scratch/logistic_regression.py)
+- Particle Swarm Optimization:
+    - [Particle Swarm Optimization Test](particle-swarm-optimization-algorithm/particle_swarm_test.ipynb)
+    - [Particle Swarm Optimization Implementation](particle-swarm-optimization-algorithm/particle-swarm-optimization\pso.py)
     
 
 ## DATA SCIENCE PROJECTS:
