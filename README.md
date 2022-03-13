@@ -16,8 +16,8 @@
     - [Evolution Stratiegies Test](genetic-algorithm/es_test.ipynb)
     - [Evolution Strategies Implementation](genetic-algorithm/simple_evolution_strategies.py)
 - Particle Swarm Optimization:
-    - [Particle Swarm Optimization Test](particle-swarm-optimization-algorithm/particle_swarm_test.ipynb)
-    - [Particle Swarm Optimization Implementation](particle-swarm-optimization-algorithm/particle-swarm-optimization\pso.py)
+    - [Particle Swarm Optimization Test](particle-swarm-optimization/particle_swarm_test.ipynb)
+    - [Particle Swarm Optimization Implementation](particle-swarm-optimization/pso.py)
     
 
 ## DATA SCIENCE PROJECTS:
