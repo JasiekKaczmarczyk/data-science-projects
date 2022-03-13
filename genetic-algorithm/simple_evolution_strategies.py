@@ -78,9 +78,9 @@ class EvolutionStrategy:
             scores=[fitness_function(pop) for pop in population]
 
             # find new best solution
-            for i in range(len(population)):
-                if scores[i] > best_eval:
-                    best_pop, best_eval=population[i], scores[i]
+            for j in range(len(population)):
+                if scores[j] > best_eval:
+                    best_pop, best_eval=population[j], scores[j]
 
             # selection, multiple parents
             parent_list=np.array([self._selection(population, max_parents) for _ in range(len(population))], dtype=object)
