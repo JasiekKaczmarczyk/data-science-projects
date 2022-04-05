@@ -19,6 +19,10 @@
     - [Particle Swarm Optimization Test](particle-swarm-optimization/particle_swarm_test.ipynb)
     - [Particle Swarm Optimization Implementation](particle-swarm-optimization/pso.py)
     
+## DEEP LEARNING:
+- Deep Convolutional Variational Autoencoder
+    - [Test](deep-convolutional-variational-autoencoder/dcvae_test.ipynb)
+    - [Implementation](deep-convolutional-variational-autoencoder/dcvae.py)
 
 ## DATA SCIENCE PROJECTS:
 
