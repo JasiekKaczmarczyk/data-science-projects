@@ -23,6 +23,7 @@
 - Deep Convolutional Variational Autoencoder
     - [Test](deep-convolutional-variational-autoencoder/dcvae_test.ipynb)
     - [Implementation](deep-convolutional-variational-autoencoder/dcvae.py)
+    - [Model Training on MNIST](deep-convolutional-variational-autoencoder/dcvae_train_mnist.ipynb)
 
 ## DATA SCIENCE PROJECTS:
 
