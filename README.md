@@ -29,6 +29,10 @@
     - [Test](deep-convolutional-variational-autoencoder/dcvae_test.ipynb)
     - [Implementation](deep-convolutional-variational-autoencoder/dcvae.py)
     - [Model Training on MNIST](deep-convolutional-variational-autoencoder/dcvae_train_mnist.ipynb)
+- **Vision Transformer:** \
+    Implementation of Vision Transformer Architecture.
+    - [Implementation](vision-transformer-architecture/vit_model.py)
+    - [Model Training on CIFAR](vision-transformer-architecture/vit_train_cifar.ipynb)
 
 ## DATA SCIENCE PROJECTS:
 - [Cat Meow Classification](cat-meow-classification/Code_Cat-Meow_Classification.ipynb)
