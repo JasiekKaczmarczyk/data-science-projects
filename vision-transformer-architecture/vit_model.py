@@ -1,4 +1,3 @@
-from tkinter import image_names
 import tensorflow as tf
 import tensorflow.keras as keras
 from tensorflow.keras import layers
@@ -19,24 +18,21 @@ class VisionTransformer():
         self.output_classes = output_classes
 
         self.transformer_units = [projection_dim*2, projection_dim]
-        self.num_patches = None
+        self.num_patches = (image_size // 2) ** 2
 
         self.model = self._build_architecture()
 
     def _build_architecture(self):
         # adding input layer
-        inputs = layers.Input(self.input_shape, name="Input Layer")
+        inputs = layers.Input(self.input_shape)
 
         resized = layers.Resizing(self.image_size, self.image_size)(inputs)
 
         # creating patches of image
-        patches = Patches(self.patch_size, name="Patch Layer")(resized)
-
-        # counting num of patches shape=(batch_size, num_patches, patch_dims)
-        self.num_patches = patches.shape[1]
+        patches = Patches(self.patch_size)(resized)
 
         # encoding patches
-        patches_encoded = PatchEncoder(self.num_patches, self.projection_dim, name="Patch Encoding Layer")(patches)
+        patches_encoded = PatchEncoder(self.num_patches, self.projection_dim)(patches)
 
         # transformer blocks
         patches_encoded = self._add_transformer_layers(patches_encoded)
@@ -63,20 +59,19 @@ class VisionTransformer():
 
         for i in range(self.num_transformer_layers):
             # layer normalization
-            x1 = layers.LayerNormalization(epsilon=1e-6, name="LayerNormalization {i} Block")(patches_encoded)
+            x1 = layers.LayerNormalization(epsilon=1e-6)(patches_encoded)
             # multi head attention
             attention_output = layers.MultiHeadAttention(
                 num_heads=self.num_attention_heads, 
                 key_dim=self.projection_dim, 
-                dropout=0.1,
-                name=f"MultiHeadAttention Layer {i} Block"
+                dropout=0.1
             )(x1, x1)
 
             # skip connection
             x2 = layers.Add()([attention_output, patches_encoded])
 
             # layer normalization
-            x3 = layers.LayerNormalization(epsilon=1e-6, name="LayerNormalization {i} Block")(x2)
+            x3 = layers.LayerNormalization(epsilon=1e-6)(x2)
 
             # mlp
             x3 = self._add_mlp_block(x3, hidden_units=self.transformer_units, dropout=0.1)
@@ -87,9 +82,9 @@ class VisionTransformer():
         return patches_encoded
 
     def _add_representation_block(self, patches_encoded):
-        representation = layers.LayerNormalization(epsilon=1e-06, name="LayerNormalization")(patches_encoded)
-        representation = layers.Flatten(name="Flatten")(representation)
-        representation = layers.Dropout(0.5, name="Dropout")(representation)
+        representation = layers.LayerNormalization(epsilon=1e-06)(patches_encoded)
+        representation = layers.Flatten()(representation)
+        representation = layers.Dropout(0.5)(representation)
 
         return representation
 

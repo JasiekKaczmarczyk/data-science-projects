@@ -9,7 +9,7 @@ class Patches(layers.Layer):
         self.patch_size=patch_size
     
     def call(self, images):
-        batch_size = images.shape[0]
+        batch_size = tf.shape(images)[0]
 
         patches = tf.image.extract_patches(
             images=images,
