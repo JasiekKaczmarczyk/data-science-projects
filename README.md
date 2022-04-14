@@ -32,7 +32,6 @@
 - **Vision Transformer:** \
     Implementation of Vision Transformer Architecture.
     - [Implementation](vision-transformer-architecture/vit_model.py)
-    - [Model Training on CIFAR](vision-transformer-architecture/vit_train_cifar.ipynb)
 
 ## DATA SCIENCE PROJECTS:
 - [Cat Meow Classification](cat-meow-classification/Code_Cat-Meow_Classification.ipynb)
