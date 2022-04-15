@@ -30,8 +30,11 @@
     - [Implementation](deep-convolutional-variational-autoencoder/dcvae.py)
     - [Model Training on MNIST](deep-convolutional-variational-autoencoder/dcvae_train_mnist.ipynb)
 - **Vision Transformer:** \
-    Implementation of Vision Transformer Architecture.
+    Implementation of Vision Transformer architecture in Tensorflow.
     - [Implementation](vision-transformer-architecture/vit_model.py)
+- **VGG** \
+    Implementation of VGG architecture in PyTorch.
+    - [Implementation](vgg-net/vgg_net.py)
 
 ## DATA SCIENCE PROJECTS:
 - [Cat Meow Classification](cat-meow-classification/Code_Cat-Meow_Classification.ipynb)
