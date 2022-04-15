@@ -18,7 +18,7 @@ class VisionTransformer():
         self.output_classes = output_classes
 
         self.transformer_units = [projection_dim*2, projection_dim]
-        self.num_patches = (image_size // 2) ** 2
+        self.num_patches = (image_size // patch_size) ** 2
 
         self.model = self._build_architecture()
 
