@@ -2,9 +2,11 @@
 
 ## ALGORITHMS FROM SCRATCH:
 - **Artificial Neural Networks:** \
-    Implementation of simple Multi Layered Perceptron from scratch.
-    - [Test](anns-from-scratch/ann_test.ipynb)
-    - [Implementation](anns-from-scratch/simple_ann_from_scratch.py)
+    Implementation of simple Neural Network from scratch.
+    - [Model](anns-from-scratch/model.py)
+    - [Layers](anns-from-scratch/layers.py)
+    - [Activation Functions](anns-from-scratch/activations.py)
+    - [Losses](anns-from-scratch/losses.py)
 - **Machine Learning Algorithms:** \
     Implementation of some of ML algorithms from scratch. Includes KNN, Naive Bayes, Linear Regression and Logistic Regression.
     - [ML Algorithms Test](ml-algorithms-from-scratch/ml_algorithms_test.ipynb)
