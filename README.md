@@ -35,8 +35,10 @@
     Implementation of Vision Transformer architecture in Tensorflow.
     - [Implementation](vision-transformer-architecture/vit_model.py)
 - **VGG** \
-    Implementation of VGG architecture in PyTorch.
+    Implementation of VGG architecture in PyTorch and Neural Style Transfer on pretrained VGG19.
     - [Implementation](vgg-net/vgg_net.py)
+    - [Neural Style Transfer](vgg-net/vgg_nst.ipynb)
+    - [Implementation - Neural Style Transfer](vgg-net/vgg_neural_style_transfer.py)
 
 ## DATA SCIENCE PROJECTS:
 - [Cat Meow Classification](cat-meow-classification/Code_Cat-Meow_Classification.ipynb)
