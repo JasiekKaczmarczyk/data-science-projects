@@ -8,6 +8,9 @@ class Loss:
         pass
 
 class MSELoss(Loss):
+    """
+    Calculates MSE Loss and it's derivative
+    """
 
     def calculate_loss(y_pred, y_true):
         return np.mean((y_pred.T-y_true)**2)

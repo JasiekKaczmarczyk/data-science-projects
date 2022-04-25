@@ -1,12 +1,34 @@
 import numpy as np
 
 class Model:
+    """
+    Initializes neural network based on provided architecture
+
+    Parameters:
+        architecture: list(layers)
+            list of layers
+        loss: function
+            loss function
+    """
+    
     def __init__(self, architecture, loss):
+        
         self.architecture=architecture
 
         self.loss = loss
 
     def predict(self, x):
+        """
+        Predicts output based on x
+
+        Parameters:
+            x: array
+                array of shape [batch_size, features]
+        Returns:
+            output: array
+                array after forward pass of shape [batch_size, features]
+        """
+
         # transposing x [batch_size, features] -> [features, batch_size]
         output = x.T
 
@@ -19,6 +41,24 @@ class Model:
     
 
     def fit(self, X, Y, batch_size, epochs=100, learning_rate=0.01, verbose=True):
+        """
+        Trains model on dataset
+
+        Parameters:
+            X: array
+                array of features
+            Y: array
+                array of labels
+            batch_size: int
+                size of batch the data will be split to
+            epochs: int
+                number of epochs
+            learning_rate: float
+                determines how fast the network learns
+            verbose: bool
+                print loss for each epoch
+        """
+
         for e in range(epochs):
 
             error=0
@@ -46,13 +86,22 @@ class Model:
         
 
     def _backpropagation(self, gradient, learning_rate):
+        """
+        Runs backpropagation
+        """
         for layer in reversed(self.architecture):
             gradient = layer.backward(gradient, learning_rate)
 
     def _shuffle_data(self, X, Y):
+        """
+        Shuffles the data
+        """
         shuffled_indices = np.random.permutation(len(X))
 
         return X[shuffled_indices], Y[shuffled_indices]
     
     def _create_batches(self, X, Y, batch_size):
+        """
+        Splits dataset into batches of given size if remainder is not 0 then last array will be of different size compared other layers
+        """
         return np.split(X, range(batch_size, len(X), batch_size)), np.split(Y, range(batch_size, len(Y), batch_size))
