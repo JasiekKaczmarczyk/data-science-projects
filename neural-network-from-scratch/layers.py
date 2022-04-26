@@ -15,7 +15,7 @@ class Dense(Layer):
     Initializes Dense layer
 
     Parameters:
-        input_size: int
+        input_size: intgi
             length of input features
         output_size: int
             length of output features
@@ -23,8 +23,8 @@ class Dense(Layer):
 
     def __init__(self, input_size, output_size):
         # setting up weights and bias
-        self.weights = np.random.normal(0, 0.02, size=(output_size, input_size))
-        self.bias = np.zeros((output_size, 1))
+        self.weights = np.random.randn(input_size, output_size) * np.sqrt(2.0/input_size)
+        self.bias = np.zeros((1, output_size))
     
     def forward(self, x):
         """
@@ -43,7 +43,7 @@ class Dense(Layer):
         self.x=x
 
         # calculating forward step
-        return self.weights @ x + self.bias
+        return np.dot(x, self.weights) + self.bias
 
     def backward(self, output_gradient, learning_rate):
         """
@@ -60,18 +60,18 @@ class Dense(Layer):
         """
 
         # calculating gradient for weights
-        weights_gradient=(output_gradient @ self.x.T)
-        bias_gradient=np.sum(output_gradient, axis=1, keepdims=True)
+        weights_gradient=np.dot(self.x.T, output_gradient)
+        bias_gradient=np.sum(output_gradient, axis=0, keepdims=True)
 
         # calculating gradient for previous layer (input layer)
-        previous_x_gradient=self.weights.T @ output_gradient
+        output_gradient=np.dot(output_gradient, self.weights.T)
 
         # gradient descent
         self.weights-=learning_rate*weights_gradient
         self.bias-=learning_rate*bias_gradient
         
         # returning output gradient for previous layer
-        return previous_x_gradient
+        return output_gradient
 
 
 class Dropout(Layer):

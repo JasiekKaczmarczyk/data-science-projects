@@ -30,14 +30,14 @@ class Model:
         """
 
         # transposing x [batch_size, features] -> [features, batch_size]
-        output = x.T
+        output = x
 
         for layer in self.architecture:
             # new output is calculated by forwarding previous output through the layer
             output=layer.forward(output)
         
         # transposing output back [features, batch_size] -> [batch_size, features]
-        return output.T
+        return output
     
 
     def fit(self, X, Y, batch_size, epochs=100, learning_rate=0.01, verbose=True):
