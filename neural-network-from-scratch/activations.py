@@ -13,7 +13,7 @@ class Activation(Layer):
         # returning activation of the input
         return self.activation(x)
 
-    def backward(self, output_gradient, learning_rate):
+    def backward(self, output_gradient):
         # returning output gradient for previous layer
         return output_gradient*self.activation_derivative(self.x)
 

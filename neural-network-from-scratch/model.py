@@ -1,4 +1,8 @@
 import numpy as np
+import layers
+import losses
+import optimizers
+from typing import List
 
 class Model:
     """
@@ -11,13 +15,14 @@ class Model:
             loss function
     """
     
-    def __init__(self, architecture, loss):
+    def __init__(self, architecture: List[layers.Layer], loss: losses.Loss, optimizer: optimizers.Optimizer):
         
         self.architecture=architecture
 
         self.loss = loss
+        self.optimizer = optimizer
 
-    def predict(self, x):
+    def predict(self, x: np.ndarray):
         """
         Predicts output based on x
 
@@ -40,7 +45,7 @@ class Model:
         return output
     
 
-    def fit(self, X, Y, batch_size, epochs=100, learning_rate=0.01, verbose=True):
+    def fit(self, X: np.ndarray, Y: np.ndarray, batch_size: int, epochs: int=100, verbose: bool=True):
         """
         Trains model on dataset
 
@@ -75,7 +80,10 @@ class Model:
                 gradient = self.loss.calculate_loss_derivative(output, y)
 
                 # backpropagation
-                self._backpropagation(gradient, learning_rate)
+                self._backpropagation(gradient)
+
+                # gradient descent
+                self._gradient_descent()
             
             # calculating loss
             error = error/len(X)
@@ -85,12 +93,17 @@ class Model:
                 print(f"Epoch {e+1}: Loss={error}")
         
 
-    def _backpropagation(self, gradient, learning_rate):
+    def _backpropagation(self, gradient):
         """
         Runs backpropagation
         """
         for layer in reversed(self.architecture):
-            gradient = layer.backward(gradient, learning_rate)
+            gradient = layer.backward(gradient)
+
+    def _gradient_descent(self):
+        for layer in self.architecture:
+            if isinstance(layer, layers.Dense):
+                self.optimizer.step(layer)
 
     def _shuffle_data(self, X, Y):
         """

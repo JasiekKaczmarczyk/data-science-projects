@@ -7,7 +7,7 @@ class Layer:
     def forward(self, x):
         pass
 
-    def backward(self, output_gradient, learning_rate):
+    def backward(self, output_gradient):
         pass
 
 class Dense(Layer):
@@ -15,7 +15,7 @@ class Dense(Layer):
     Initializes Dense layer
 
     Parameters:
-        input_size: intgi
+        input_size: int
             length of input features
         output_size: int
             length of output features
@@ -25,6 +25,12 @@ class Dense(Layer):
         # setting up weights and bias
         self.weights = np.random.randn(input_size, output_size) * np.sqrt(2.0/input_size)
         self.bias = np.zeros((1, output_size))
+
+        self.weights_gradient = None
+        self.bias_gradient = None
+
+        self.velocity_weights = np.zeros((input_size, output_size))
+        self.velocity_bias = np.zeros((1, output_size))
     
     def forward(self, x):
         """
@@ -45,7 +51,7 @@ class Dense(Layer):
         # calculating forward step
         return np.dot(x, self.weights) + self.bias
 
-    def backward(self, output_gradient, learning_rate):
+    def backward(self, output_gradient):
         """
         Backward pass of Dense layer
 
@@ -60,15 +66,15 @@ class Dense(Layer):
         """
 
         # calculating gradient for weights
-        weights_gradient=np.dot(self.x.T, output_gradient)
-        bias_gradient=np.sum(output_gradient, axis=0, keepdims=True)
+        self.weights_gradient=np.dot(self.x.T, output_gradient)
+        self.bias_gradient=np.sum(output_gradient, axis=0, keepdims=True)
 
         # calculating gradient for previous layer (input layer)
         output_gradient=np.dot(output_gradient, self.weights.T)
 
         # gradient descent
-        self.weights-=learning_rate*weights_gradient
-        self.bias-=learning_rate*bias_gradient
+        # self.weights-=learning_rate*weights_gradient
+        # self.bias-=learning_rate*bias_gradient
         
         # returning output gradient for previous layer
         return output_gradient
@@ -111,5 +117,5 @@ class Dropout(Layer):
 
         return self.x
 
-    def backward(self, output_gradient, learning_rate):
+    def backward(self, output_gradient):
         return output_gradient
