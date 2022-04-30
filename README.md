@@ -7,6 +7,7 @@
     - [Layers](neural-network-from-scratch/layers.py)
     - [Activation Functions](neural-network-from-scratch/activations.py)
     - [Losses](neural-network-from-scratch/losses.py)
+    - [Optimizers](neural-network-from-scratch/optimizers.py)
 - **Machine Learning Algorithms:** \
     Implementation of some of ML algorithms from scratch. Includes KNN, Naive Bayes, Linear Regression and Logistic Regression.
     - [ML Algorithms Test](ml-algorithms-from-scratch/ml_algorithms_test.ipynb)
