@@ -40,6 +40,10 @@
     - [VGG Implementation](vgg-net/vgg_net.py)
     - [Neural Style Transfer](vgg-net/vgg_nst.ipynb)
     - [Neural Style Transfer - Network Implementation](vgg-net/vgg_neural_style_transfer.py)
+- **DCGAN** \
+    Implementation of Deep Convolutional Generative Adversarial Network in PyTorch.
+    - [DCGAN Training Loop](generative-adversarial-networks/deep-convolutional-gan/dcgan_train.ipynb)
+    - [DCGAN Architecture](data-science-projects/generative-adversarial-networks/deep-convolutional-gan/dcgan.py)
 
 ## DATA SCIENCE PROJECTS:
 - [Cat Meow Classification](cat-meow-classification/Code_Cat-Meow_Classification.ipynb)
