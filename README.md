@@ -43,7 +43,7 @@
 - **DCGAN** \
     Implementation of Deep Convolutional Generative Adversarial Network in PyTorch.
     - [DCGAN Training Loop](generative-adversarial-networks/deep-convolutional-gan/dcgan_train.ipynb)
-    - [DCGAN Architecture](data-science-projects/generative-adversarial-networks/deep-convolutional-gan/dcgan.py)
+    - [DCGAN Architecture](generative-adversarial-networks/deep-convolutional-gan/dcgan.py)
 
 ## DATA SCIENCE PROJECTS:
 - [Cat Meow Classification](cat-meow-classification/Code_Cat-Meow_Classification.ipynb)
